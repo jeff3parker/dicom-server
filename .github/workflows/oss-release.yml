@@ -11,8 +11,9 @@ jobs:
   oss-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Script to Create OSS Release
+      - name: Checkout repo
         uses: actions/checkout@v2
+      - name: Script to Create OSS Release
         uses: actions/upload-artifact@v2
         with: # Upload generated log file
           name: log
