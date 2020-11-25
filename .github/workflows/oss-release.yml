@@ -22,4 +22,5 @@ jobs:
         env: # Use secret in repo to make necessary AzureDevOps calls.
           AZUREDEVOPS_PAT: ${{ secrets.AZUREDEVOPS_PAT }}
         run: | # Run powershell script to manage API calls to generate Release.
-          $GITHUB_WORKSPACE\.github\workflows\CreateRelease.ps1
+          Set-Location $env:GITHUB_WORKSPACE\.github\workflows
+          .\CreateRelease.ps1
